@@ -9,7 +9,7 @@ let socket = null;
 export const connectSocket = () => {
   if (socket) return socket;
 
-  socket = io('http://localhost:5000', {
+  socket = io(import.meta.env.VITE_API_URL, {
     reconnection: true,
     reconnectionDelay: 1000,
     reconnectionDelayMax: 5000,
